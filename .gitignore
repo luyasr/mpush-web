@@ -26,8 +26,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
-**/.vscode
-**/.idea
-**/public
 
 *.tsbuildinfo

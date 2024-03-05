@@ -1,5 +1,5 @@
 export interface Response<T = any> {
     code: number
-    message: string
+    reason: string
     data: T
 }

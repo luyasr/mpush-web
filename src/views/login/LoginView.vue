@@ -27,18 +27,20 @@
 import { ref, reactive } from 'vue'
 import type { UnwrapRef } from 'vue'
 import router from '@/router'
-import type { loginRequest } from '@/types/login'
+import type { LoginRequest } from '@/types/user'
 import type { Rule } from 'ant-design-vue/es/form'
+import { useTokenStore } from '@/stores/modules/token'
 
+const tokenStore = useTokenStore()
 const loading = ref(false)
-const formState: UnwrapRef<loginRequest> = reactive({
+const formState: UnwrapRef<LoginRequest> = reactive({
   username: '',
   password: ''
 })
-const onFinish = async (values: any) => {
+const onFinish = async () => {
   try {
     loading.value = true
-    console.log('Received values of form: ', values)
+    await tokenStore.login(formState)
     // 登录成功跳转到首页
     router.push({ name: 'home' })
   } catch (error) {
@@ -58,7 +60,8 @@ const rules: Record<string, Rule[]> = {
   password: [
     {
       required: true,
-      message: '请输入密码'
+      message: '请输入密码',
+      trigger: 'blur'
     }
   ]
 }

@@ -14,11 +14,11 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-    
+
 // 注册图标组件
 const IconData: Record<string, Component> = Icons
 Object.keys(IconData).forEach((key: string) => {
-    app.component(key, IconData[key]);
+  app.component(key, IconData[key])
 })
 
 app.mount('#app')

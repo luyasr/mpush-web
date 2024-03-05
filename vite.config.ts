@@ -30,5 +30,10 @@ export default defineConfig({
         javascriptEnabled: true
       }
     }
+  },
+  server: {
+    proxy: {
+      '/api/v1/token': 'http://localhost:8080'
+    }
   }
 })
