@@ -6,5 +6,5 @@ export default {
     // 网站标题
     title: 'mpush',
     // message push server
-    messagePushServer: ''
+    messagePushServer: '',
 }

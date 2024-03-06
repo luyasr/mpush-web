@@ -22,9 +22,28 @@
 
 <script setup lang="ts">
 import type { MenuProps } from 'ant-design-vue'
+import router from '@/router'
+import { useTokenStore } from '@/stores/modules/token'
 
+const tokenStore = useTokenStore()
 const onClick: MenuProps['onClick'] = ({ key }) => {
-  console.log(`Click on item ${key}`)
+  switch (key) {
+    case '1':
+      console.log('个人中心')
+      break
+    case '2': 
+      logout()
+      break
+  }
+}
+
+const logout = async () => {
+  try{
+    await tokenStore.logout()
+    router.push({name: 'login'})
+  } catch (error) {
+    console.log(error)
+  }
 }
 </script>
 
