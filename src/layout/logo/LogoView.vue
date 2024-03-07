@@ -13,7 +13,7 @@ import config from '@/config/config'
 .layout-logo {
   display: flex;
   height: 32px;
-  width: 200px;
+  width: 160px;
   margin: 8px 15px;
   justify-content: flex-start;
   align-items: center;
@@ -23,15 +23,17 @@ import config from '@/config/config'
 
   img {
     display: flex;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-left: 20px;
     align-items: center;
+    /* 防止 img 被压缩 */
+    flex-shrink: 0;
   }
 
   span {
     font-size: @layout-menu-logo-font-size;
-    margin-left: 15px;
+    margin-left: 20px;
     /* 隐藏溢出部分 */
     overflow: hidden;
     /* 防止文本换行 */

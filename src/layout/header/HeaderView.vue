@@ -5,7 +5,7 @@
     </div>
     <div class="header-right">
       <a-dropdown>
-        <a-avatar size="large">
+        <a-avatar size="large" src="">
           <template #icon><UserOutlined /></template>
         </a-avatar>
         <template #overlay>

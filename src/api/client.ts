@@ -65,7 +65,7 @@ instance.interceptors.response.use(
 )
 
 export const client = {
-  get<T = any>(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<T>> {
+  get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
     return instance.request({ url, method: 'GET', ...config })
   },
   post<T = any>(url: string, data?: object, config?: AxiosRequestConfig): Promise<T> {

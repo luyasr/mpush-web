@@ -1,14 +1,14 @@
 <template>
   <a-layout class="layout-container">
-    <a-layout-header class="layout-header">
-      <Logo />
-      <Header />
-    </a-layout-header>
     <a-layout>
       <a-layout-sider class="layout-menu" v-model:collapsed="collapsed" collapsible>
+        <Logo />
         <Menu :menuList="routeStore.getRoutes"> </Menu>
       </a-layout-sider>
       <a-layout>
+        <a-layout-header class="layout-header">
+          <Header />
+        </a-layout-header>
         <a-layout-content class="layout-content">
           <BreadCrumb />
           <div class="content">
