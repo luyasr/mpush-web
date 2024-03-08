@@ -30,9 +30,9 @@ instance.interceptors.response.use(
       // 请求已发出，但服务器响应的状态码不在 2xx 范围内
       const { status, data } = error.response
       switch (status) {
-        case 400:
-          message.error('请求错误')
-          break
+        // case 400:
+        //   message.error('请求错误')
+        //   break
         case 401:
           message.error('未授权的访问')
           break
